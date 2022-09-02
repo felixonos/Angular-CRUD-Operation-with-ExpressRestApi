@@ -1,0 +1,20 @@
+<h1>{{ title }}</h1>
+
+<div>
+    The summation of numbers ( <span *ngFor="let num of numbers"> {{ num }} </span> ) is
+    {{ val1 }}
+</div>
+
+<div>
+    The summation of filtered numbers ( <span *ngFor="let num of filteredNumbers"> {{ num }} </span> ) is {{val2 }}
+</div>
+
+<div>
+    The summation of processed numbers ( <span *ngFor="let num of processedNumbers"> {{ num }} </span> )is {{val3 }}
+</div>
+
+<div> The response from the API is <em>{{ apiMessage }}</em> </div>
+
+<div>
+    <a id="counter" href="#">Click here</a> to increment the counter value. The current counter value is {{counter }}
+<div>

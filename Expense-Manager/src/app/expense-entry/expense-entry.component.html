@@ -1,0 +1,41 @@
+
+
+<!-- Page Content -->
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col-lg-12 text-center bg-dark " style="padding-top: 20px;">
+            <div class="container" style="padding-left: 0px; padding-right: 0px;">
+                <div class="row">
+                    <div class="col-sm" style="text-align: left;"> {{ title }} </div>
+                    <div class="col-sm" style="text-align: right;"> <button type="button"
+                            class="btn btn-warning" routerLink="/addItems/:id">Add Items</button> </div>
+                </div>
+            </div>
+            <div class="container box" style="margin-top: 10px;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-light">Item</th>
+                            <th class="text-light">Amount</th>
+                            <th class="text-light" >Category</th>
+                            <th class="text-light">Location</th>
+                            <th class="text-light">Spent On</th>
+                            <th class="text-light"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let entry of expenseEntries">
+                            <th class="text-light" scope="row">{{ entry.item }}</th>
+                            <th class="text-light">{{ entry.amount }}</th>
+                            <td class="text-light">{{ entry.category }}</td>
+                            <td class="text-light">{{ entry.location }}</td>
+                            <td class="text-light">{{ entry.spendOn | date: 'short' }}</td>
+                            <td><a class="nav-link text-warning " routerLink="/View/{{entry.id}}">View</a></td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

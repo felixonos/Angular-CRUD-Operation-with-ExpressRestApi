@@ -1,0 +1,45 @@
+<div class="container mt-5 bg-secondary p-5">
+    <h2 class="text-warning">Add-Details</h2>
+
+<!-- template driven actions on form after you have imported formsModule of the appmodule #f is to bind the form. log the onsubmit on the TS -->
+    <form class="justify-content-center" (ngSubmit)="AddExpense()" #f="ngForm">
+
+        <div class="inline-block col-md-6 mt-3">
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="text-warning">Item</label>
+                <input required class="form-control"  [(ngModel)]="FormInput.item" name="item">
+            </div>
+        </div>
+        <!-- The word REQUIRED here and below is for validation of input esle form will not be submitted -->
+        <div class="inline-block col-md-6 mt-1">
+            <div class="form-group">
+                <label for="exampleInputEmail1"class="text-warning">Amount</label>
+                <input required class="form-control" [(ngModel)]="FormInput.amount" name="amount">
+            </div>
+        </div>
+
+        <div class="inline-block col-md-6 mt-1">
+            <div class="form-group">
+                <label for="exampleInputEmail1"class="text-warning">Category</label>
+                <input required class="form-control" [(ngModel)]="FormInput.category" name="category">
+            </div>
+        </div>
+
+        <div class="inline-block col-md-6 mt-1">
+            <div class="form-group">
+                <label for="exampleInputEmail1"class="text-warning">Location</label>
+                <input required  class="form-control" [(ngModel)]="FormInput.location" name="location">
+            </div>
+        </div>
+
+        <div class="inline-block col-md-6 mt-1">
+            <div class="form-group">
+                <label for="datetime" class="text-warning">SpendOn</label>
+                <input  class="form-control" [(ngModel)]="FormInput.spendOn" name="spendOn">
+            </div>
+        </div>
+
+        <!-- This fade out the update button if form is not filled completely -->
+        <button type="submit" class="btn btn-warning mt-3" [disabled]="!f.valid">Save</button>
+    </form>
+</div>

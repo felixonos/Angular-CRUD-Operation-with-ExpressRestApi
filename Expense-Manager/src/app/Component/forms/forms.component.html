@@ -1,0 +1,47 @@
+
+    <div class="container mt-5 bg-dark p-5">
+        <h2 class="text-warning">ExpenseDetails</h2>
+
+    <!-- template driven actions on form after you have imported formsModule of the appmodule #f is to bind the form. log the onsubmit on the TS -->
+        <form class="justify-content-center" (ngSubmit)="onSubmit()" #f="ngForm">
+
+            <div class="inline-block col-md-6 mt-3">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="text-warning">Item</label>
+                    <input required class="form-control"  [(ngModel)]="FormEntry.item" name="item">
+                </div>
+            </div>
+            <!-- The word REQUIRED here and below is for validation of input esle form will not be submitted -->
+            <div class="inline-block col-md-6 mt-1">
+                <div class="form-group">
+                    <label for="exampleInputEmail1"class="text-warning">Amount</label>
+                    <input required class="form-control" [(ngModel)]="FormEntry.amount" name="amount">
+                </div>
+            </div>
+
+            <div class="inline-block col-md-6 mt-1">
+                <div class="form-group">
+                    <label for="exampleInputEmail1"class="text-warning">Category</label>
+                    <input required class="form-control" [(ngModel)]="FormEntry.category" name="category">
+                </div>
+            </div>
+
+            <div class="inline-block col-md-6 mt-1">
+                <div class="form-group">
+                    <label for="exampleInputEmail1"class="text-warning">Location</label>
+                    <input required  class="form-control" [(ngModel)]="FormEntry.location" name="location">
+                </div>
+            </div>
+
+            <div class="inline-block col-md-6 mt-1">
+                <div class="form-group">
+                    <label for="date" class="text-warning">SpendOn</label>
+                    <input type="date" class="form-control" [(ngModel)]="FormEntry.spendOn" name="spendOn">
+                </div>
+            </div>
+
+            <!-- This fade out the update button if form is not filled completely -->
+            <button type="submit" class="btn btn-warning mt-3" [disabled]="!f.valid">Update</button>
+            <button type="button" class="btn btn-danger mt-3 ml-3" (click)="deleteExpenseItem(FormEntry.id)">Delete</button>
+        </form>
+    </div>
